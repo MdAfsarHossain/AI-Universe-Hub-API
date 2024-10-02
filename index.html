@@ -1,0 +1,200 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="cupcake">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>AI Universe Hub</title>
+    <!-- Favicon -->
+    <link rel="shortcut icon" href="./images/hub.png" type="image/x-icon" />
+
+    <!-- Tailwind and DaisyUI -->
+    <link
+      href="https://cdn.jsdelivr.net/npm/daisyui@4.12.10/dist/full.min.css"
+      rel="stylesheet"
+      type="text/css"
+    />
+    <script src="https://cdn.tailwindcss.com"></script>
+
+    <!-- Fontawesome -->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css"
+      integrity="sha512-Kc323vGBEqzTmouAECnVceyQqyqdsSiqLQISBL29aUW4U/M7pSPA/gEUZQqv1cwx4OnYxTxve5UMg5GT6L4JJg=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+  </head>
+  <body>
+    <!-- Main -->
+    <main class="ml-5 mr-5 mx-auto lg:ml-28 lg:mr-28 lg:mx-auto mt-5">
+      <!-- Heading -->
+      <div class="flex flex-col justify-center items-center gap-5 py-5">
+        <h1 class="font-bold text-3xl">AI Universe Hub</h1>
+        <button
+          class="btn rounded bg-red-600 text-white border-2 border-red-600 hover:bg-transparent hover:border-red-600 hover:text-red-600"
+        >
+          Sort By Date
+        </button>
+      </div>
+
+      <div
+        id="loading-spinner"
+        class="flex flex-col justify-center items-center py-10"
+      >
+        <span class="loading loading-spinner loading-lg text-success"></span>
+      </div>
+
+      <!-- Cards Wrapper -->
+      <div
+        id="cards-container"
+        class="mb-10 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5 mt-5"
+      >
+        <!-- Card - 1 -->
+        <!-- <div class="flex flex-col gap-3 border-2 p-5 rounded-xl">
+          <div class="h-full">
+            <img
+              class="rounded-xl"
+              src="./images/chatgpt_assistente.jpg"
+              alt=""
+            />
+          </div>
+
+          <div class="">
+            <h1 class="font-bold text-xl">Features</h1>
+            <p>Features Length: ${data.features.length}</p>
+            <ol id="features-lists" class="list-decimal px-5 text-gray-600">
+              <li>Natural language processing</li>
+              <li>Contextual understanding</li>
+              <li>Text generation</li>
+            </ol>
+          </div>
+
+          <div
+            class="flex flex-row justify-between items-center border-t-2 pt-4 mt-2"
+          >
+            <div class="flex flex-col gap-2">
+              <h1 class="font-bold text-xl">ChatGPT</h1>
+              <div class="flex flex-row gap-2 justify-center items-center">
+                <i class="fa-regular fa-calendar-days"></i>
+                <p>11/01/2022</p>
+              </div>
+            </div>
+
+            <div
+              onclick="custom_modal.showModal()"
+              class="bg-blue-600 px-3 py-2 rounded-full cursor-pointer hover:bg-blue-400 animate-pulse"
+            >
+              <i class="fa-solid fa-arrow-right"></i>
+            </div>
+          </div>
+        </div> -->
+
+        <!-- Ends of Card - 4 -->
+      </div>
+      <!-- Ends of Cards container -->
+
+      <!-- See More Button -->
+      <div class="flex flex-col justify-center items-center mb-20">
+        <button
+          class="btn rounded bg-red-600 text-white border-2 border-red-600 hover:bg-transparent hover:border-red-600 hover:text-red-600"
+        >
+          See More
+        </button>
+      </div>
+
+      <!-- Custom Modal -->
+      <div class="hidden flex flex-row gap-5 mb-20">
+        <!-- Left -->
+        <div
+          class="flex-1 border-2 px-5 py-5 rounded-lg bg-[#EB57570D] border-[#EB5757]"
+        >
+          <h1 class="font-bold text-2xl">
+            ChatGPT is an AI-powered chatbot platform that uses OpenAI's GPT
+            technology to simulate human conversation.
+          </h1>
+
+          <!-- Premium Container -->
+          <div class="grid grid-cols-3 gap-5 items-center mt-5 mb-5">
+            <!-- 1 -->
+            <div class="bg-white px-5 py-5 rounded-lg font-bold text-center">
+              <h1 class="text-green-600">
+                $10/ <br />
+                month <br />
+                Basic
+              </h1>
+            </div>
+            <!-- 2 -->
+            <div class="bg-white px-5 py-5 rounded-lg font-bold text-center">
+              <h1 class="text-amber-600">
+                $50/ <br />
+                month <br />
+                Pro
+              </h1>
+            </div>
+            <!-- 3 -->
+            <div class="bg-white px-5 py-5 rounded-lg font-bold text-center">
+              <h1 class="text-red-600">
+                Contact <br />
+                us <br />
+                Enterprise
+              </h1>
+            </div>
+          </div>
+
+          <!-- Features -->
+          <div class="flex flex-row gap-16">
+            <!-- Features -->
+            <div class="">
+              <h1 class="font-bold text-xl mb-2">Features</h1>
+              <ul class="px-5 list-disc">
+                <li>Customizable responses</li>
+                <li>Multilingual support</li>
+                <li>Seamless integration</li>
+              </ul>
+            </div>
+            <!-- Integrations -->
+            <div class="">
+              <h1 class="font-bold mb-2 text-xl">Integrations</h1>
+              <ul class="px-5 list-disc">
+                <li>FB Messenger</li>
+                <li>Slack</li>
+                <li>Telegram</li>
+              </ul>
+            </div>
+          </div>
+          <!-- End of  Features -->
+        </div>
+        <!-- End of Left part -->
+
+        <!-- Right -->
+        <div
+          class="flex-1 border-2 px-5 py-5 rounded-lg flex flex-col justify-center items-center gap-3 text-center relative"
+        >
+          <img
+            class="rounded-lg"
+            src="./images/chatgpt_assistente.jpg"
+            alt=""
+          />
+          <h1 class="font-bold text-2xl">Hi, how are you doing today?</h1>
+          <p class="text-lg w-96">
+            I'm doing well, thank you for asking. How can I assist you today?
+          </p>
+          <div class="absolute bg-red-500 rounded px-4 py-2 right-10 top-12">
+            <p class="text-white font-bold">94% accuracy</p>
+          </div>
+        </div>
+        <!-- End of right part -->
+      </div>
+      <!-- Ends of Custom Modal -->
+
+      <!-- DaisyUI Modal -->
+      <dialog id="custom_modal" class="modal">
+        <div id="modalContainer" class="modal-box w-11/12 max-w-5xl"></div>
+      </dialog>
+      <!-- End of DaisyUI Modal -->
+    </main>
+
+    <!-- JS -->
+    <script src="./js/app.js"></script>
+  </body>
+</html>
